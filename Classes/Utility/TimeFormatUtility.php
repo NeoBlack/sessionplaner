@@ -16,7 +16,7 @@ class TimeFormatUtility
     public static function getFormattedTime(int $value): string
     {
         $value = (int)$value;
-        $hours = (string)floor($value / 3600);
+        $hours = (string)floor(($value / 3600) % 24);
         $minutes = (string)floor(($value / 60) % 60);
 
         return str_pad($hours, 2, '0', STR_PAD_LEFT) . ':' . str_pad($minutes, 2, '0', STR_PAD_LEFT);
